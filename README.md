@@ -172,6 +172,6 @@ Biopython is needed for superimpositions, sequences alignment and obtaining the 
 If user installs via *pip* requirements are automatically checked and installed if necessary.
 
 # Bibliography
-http://mmb.irbbarcelona.org/MDWeb/help.php?id=checking
-https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/findclash/findclash.html
-https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/matchmaker/matchmaker.html
+* http://mmb.irbbarcelona.org/MDWeb/help.php?id=checking
+* https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/findclash/findclash.html
+* https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/matchmaker/matchmaker.html
