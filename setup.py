@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
   name = 'YouSet',
-  packages = ['YouSet','YouSet.modules', 'YouSet.MarkdownImages'],
+  packages = ['YouSet','YouSet.modules', 'MarkdownImages'],
   version = '1.4',
   license='MIT',
   description = 'Superimposition macrocomplex builder',
