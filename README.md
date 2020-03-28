@@ -176,6 +176,5 @@ Biopython is needed for superimpositions, sequences alignment and obtaining the 
 If user installs via *pip* requirements are automatically checked and installed if necessary.
 
 # Bibliography
-* http://mmb.irbbarcelona.org/MDWeb/help.php?id=checking
-* https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/findclash/findclash.html
-* https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/matchmaker/matchmaker.html
+* Adam Hospital, Pau Andrio, Carles Fenollosa, Damjan Cicin-Sain, Modesto Orozco, Josep Lluís Gelpí. MDWeb and MDMoby: an integrated web-based platform for molecular dynamics simulations. *Bioinformatics, 2012, 28(9):1278-1279*.
+* UCSF Chimera--a visualization system for exploratory research and analysis. Pettersen EF, Goddard TD, Huang CC, Couch GS, Greenblatt DM, Meng EC, Ferrin TE. *J Comput Chem. 2004 Oct;25(13):1605-12*.  
