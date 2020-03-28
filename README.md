@@ -74,7 +74,7 @@ Options:
 
 To run the program with the defaults settings, the following command must be used:
 ```sh
-python3 buildcomplex_clear.py -d 5nss_interact/ -f 5nss.fasta -o 5nss_complex.pdb
+python3 buildcomplex_clear.py -d 5nss_interact/ -f 5nss.fasta -o 5nss_interact/results/
 ```
 If the user want obtain the final stoichiometry of the model, the option verbose should be used. When the final model is build, it will print the following message:
 ```
