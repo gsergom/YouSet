@@ -105,37 +105,43 @@ The final RMSD (Root-Mean-Square deviation) over all residue pairs  is a measure
 # Analysis of the proposed macro-complexes examples
 ### **4G83**: Crystal Structure of p73 DNA-Binding Domain Tetramer bound to a Full Response-Element
 p73, P53-Like Transcription Factor or P53-Related Protein, has been considered a tumor suppressor because of its structural resemblance to p53. It is a DNA binding transcription factor involved in cell cycle arrest, regulation of transcription DNA templated and induction of apoptosis. This complex has four chains, with protein and DNA structure. Chains A and B correspond to the tumor protein p73; and chains E and F to DNA.
+
 ![Interface](MarkdownImages/4G83.png)
 > Observations:
 The obtained complex was an homodimer + 2 nucleic acids (final stoichiometry: A2 + 2 nucleic acids), which is in accordance with the real stoichiometry. RMSD between 198 pruned atom pairs is 0.000 angstroms; (across all 198 pairs: 0.000).
 
 ### **5FJ8**: Cryo-EM structure of yeast RNA polymerase III elongation complex at 3. 9 A
 RNA polymerase III  transcribes DNA to synthesize small RNAs as ribosomal RNA and transfer RNA. This macro-complex presents the cryo-electron microscopy structures of the Saccharomyces cerevisiae Pol III. Chain R corresponds to RNA; chains S and T to DNA (template and non-template); and chains A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P and Q to RNA polymerase III subunits.
-# imatge
+
+![Interface](MarkdownImages/5FJ8.png)
 > Observations:
 The obtained complex was an heterodimer + 3 nucleic acids (final stoichiometry: A1E1G1H1I1P1F1O1K1B1D1C1M1J1L1N1Q1 + 3 nucleic acids), which is in accordance with the real stoichiometry. RMSD between 1422 pruned atom pairs is 0.000 angstroms; (across all 1422 pairs: 0.000).
 
 ### **5NSS**: Cryo-EM structure of RNA polymerase-sigma54 holoenzyme with promoter DNA and transcription activator PspF intermediate complex
 RNA polymerase it’s a DNA binding protein which transcribes DNA templated to synthesize RNA. This macro-complex includes sigma54 related to the RNA polymerase which is a protein needed for initiation of transcription in bacteria. It also includes Psp operon transcriptional activator. Chains H and I correspond to DNA; chains F, G, J, K, L and N correspond to Psp operon transcriptional activator; chains A, B, C, D and E to RNA polymerase subunits; and chain M corresponds to RNA polymerase sigma-54 factor.
-# imatge
+
+![Interface](MarkdownImages/5NSS.png)
 > Observations:
 The obtained complex was an heterodimer + 2 nucleic acids (final stoichiometry: A2C1D1M1E1F6 + 2 nucleic acids), which is  in accordance with the real stoichiometry. RMSD between 1340 pruned atom pairs is 0.000 angstroms; (across all 1340 pairs: 0.000).
 
 ### **6GMH**: Structure of activated transcription complex Pol II-DSIF-PAF-SPT6
 RNA polymerase II calatyzes the transcription of DNA to synthesize mRNA and most snRNA and microRNA. This macro-complex also includes the transcription elongation factors SPT4, SPT5 and SPT6. The SPT4-SPT5 complex mediates both activation and inhibition of transcription elongation, and plays a role in pre-mRNA processing, and SPT6 plays a role in maintenance of chromatin structure during RNA polymerase II transcription elongation. It also includes: PAF1 complex, which is a RNA polymerase II associated factor and includes some components as protein CTR9 homolog, the protein LEO1, the cell division cycle 73 protein (CDC73) and the WD repeat-containing protein 61. Chain P corresponds to RNA; chains N and T to DNA; chains A, B, C, D, E, F, G, H, I, J, K and L to RNA polymerase II subunits; chain Q to protein CTR9 homolog; chain U to protein LEO1; chain V to PAF1; chain W to WDR61; chain X to CDC73; and chains Y, Z and M to transcription elongation factors SPT4, SPT5 and SPT6 respectively.
-# imatge
+
+![Interface](MarkdownImages/6GMH.png)
 > Observations:
 The obtained complex was an heterodimer + 3 nucleic acids (final stoichiometry: A1Z1E1I1G1M1B1F1C1K1H1U1V1J1L1D1Q1W1X1Y1 + 3 nucleic acids), which is in accordance with the real stoichiometry. RMSD between 1441 pruned atom pairs is 0.000 angstroms; (across all 1441 pairs: 0.000).
 
 ### **6OM3**: Crystal structure of the Orc1 BAH domain in complex with a nucleosome core particle
 Origin recognition complex subunit 1 (ORC1) is a component of the origin recognition complex (ORC) that binds origins of replication. ORC is required to assemble the pre-replication complex necessary to initiate DNA replication. This macro-complex presents the structure of the yeast ORC1BAH domain bound to the nucleosome core particle. The nucleosome is the basic structural unit of DNA packaging in eukaryotes and consists of a segment of DNA wound around 8 histones. Chains A, E, M, Q, B, F, N, R, C, G, O, S, D, H, P, T correspond to different histones; chains K, L, W and X correspond to ORC1; and chains I, U, J and V correspond to DNA.
-# imatge
+
+![Interface](MarkdownImages/6OM3.png)
 > Observations:
 The obtained complex was an heterodimer + 4 nucleic acids (final stoichiometry: A4B4K4C4D4 + 4 nucleic acids), which is in accordance with the real stoichiometry. RMSD between 195 pruned atom pairs is 0.000 angstroms; (across all 195 pairs: 0.000).
 
 ### **3T72**: PhoB(E)-Sigma70(4)-(RNAP-Betha-flap-tip-helix)-DNA Transcription Activation Sub-Complex
 PhoB is a two‐component response regulator that activates transcription by interacting with the rpoD, also called sigma70, subunit of the E. coli RNA polymerase. Chains C, G, K, O, T ,X, 2, 6, a, e, i, m, D, H, L, P, U, Y, 3, 7, b, f, j and n correspond to DNA; chains A, B, E, F, I, J, M, N, R, S, V, W, Z, 1, 4, 5, 8, 9, c, d, g, h, k and l correspond to protein PhoB; and chains o and q to RNA polymerase sigma factor rpoD.
-# imatge
+
+![Interface](MarkdownImages/3T72.png)
 > Observations:
 The obtained complex was an heterodimer + 24 nucleic acids (final stoichiometry: 1(24)o(2) + 24 nucleic acids). RMSD between 98 pruned atom pairs is 0.354 angstroms; (across all 102 pairs: 0.876).
 
@@ -143,19 +149,16 @@ The obtained complex was an heterodimer + 24 nucleic acids (final stoichiometry:
 
 ### **2C7A**: Structure of the progesterone receptor-DNA complex
 Progesterone receptor is a DNA and Zinc Ion binding transcription factor, that regulates the transcription of DNA templated in the cell nucleus. Chains A and B correspond to progesterone receptor; and chains C and D to DNA. The real stoichiometry is Homo 2-mer - A2 + 2 nucleic acids.
-# imatge
+
+![Interface](MarkdownImages/2C7A.png)
 > Observations:
 The obtained complex was an homodimer + 2 nucleic acids (final stoichiometry: A2 + 2 nucleic acids), which is in accordance with the real stoichiometry. RMSD between 78 pruned atom pairs is 0.000 angstroms; (across all 78 pairs: 0.000).
 
 ### Human Thyroid Receptor:
 ### **2NLL**: Retinoid X receptor-thyroid hormone receptor DNA-binding domain heterodimer bound to thyroid response element DNA
 Retinoic acid receptor and thyroid hormone receptor are DNA and Zinc Ion binding transcription factors, that regulate the transcription of DNA templated, and their function takes place in the cell nucleus. Chain A corresponds to retinoic acid receptor; chain B to thyroid hormone receptor; and chains C and D to DNA. The real stoichiometry is Hetero 2-mer - AB + 2 nucleic acids.
-# imatge
 
-
-
-
-
+![Interface](MarkdownImages/2NLL.png)
 > Observations:
 The obtained complex was an heterodimer + 2 nucleic acids (final stoichiometry: A1B1 + 2 nucleic acids), which is in accordance with the real stoichiometry. RMSD between 103 pruned atom pairs is 0.000 angstroms; (across all 103 pairs: 0.000).
 
