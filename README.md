@@ -105,7 +105,7 @@ The final RMSD (Root-Mean-Square deviation) over all residue pairs  is a measure
 # Analysis of the proposed macro-complexes examples
 ### **4G83**: Crystal Structure of p73 DNA-Binding Domain Tetramer bound to a Full Response-Element
 p73, P53-Like Transcription Factor or P53-Related Protein, has been considered a tumor suppressor because of its structural resemblance to p53. It is a DNA binding transcription factor involved in cell cycle arrest, regulation of transcription DNA templated and induction of apoptosis. This complex has four chains, with protein and DNA structure. Chains A and B correspond to the tumor protein p73; and chains E and F to DNA.
-# imatge
+![Interface](MarkdownImages/4G83.png)
 > Observations:
 The obtained complex was an homodimer + 2 nucleic acids (final stoichiometry: A2 + 2 nucleic acids), which is in accordance with the real stoichiometry. RMSD between 198 pruned atom pairs is 0.000 angstroms; (across all 198 pairs: 0.000).
 
