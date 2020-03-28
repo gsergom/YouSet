@@ -3,8 +3,8 @@ from distutils.core import setup
 
 setup(
   name = 'YouSet',
-  packages = ['YouSet'],
-  version = '1.2',
+  packages = ['YouSet','YouSet.modules'],
+  version = '1.3',
   license='MIT',
   description = 'Superimposition macrocomplex builder',
   author = 'Paula Lopez, Gerard Serrano, Laura Vila',
