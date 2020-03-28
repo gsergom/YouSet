@@ -4,7 +4,7 @@ from distutils.core import setup
 setup(
   name = 'YouSet',
   packages = ['YouSet'],
-  version = '1.1',
+  version = '1.2',
   license='MIT',
   description = 'Superimposition macrocomplex builder',
   author = 'Paula Lopez, Gerard Serrano, Laura Vila',
