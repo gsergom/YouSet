@@ -20,7 +20,6 @@
      * [3T72. PhoB(E)-Sigma70(4)-(RNAP-Betha-flap-tip-helix)-DNA Transcription Activation Sub-Complex](#3T72-PhoBE\-Sigma704\-RNAP\-Betha\-flap\-tip\-helix\-DNA-Transcription-Activation-Sub\-Complex)
      * [Human Progesterone Receptor:](#Human-Progesterone-Receptor)
      * [Human Thyroid Receptor:](#Human-Thyroid-Receptor)
-
 * [Limitations](#Limitations)
 * [Requirements](#Requirements)
 * [Bibliography](#Bibliography)
@@ -33,7 +32,7 @@ The input files consists in pairs of interacting chains in PDB format, that can 
 
 # Program design
 ## Obtaining input PDB files
-Find the chains interactions from PDB files it is not part of our program but we have developed a module to split macro-complexes in pdb files of pairs of all type of chains interacting (protein-protein, protein-nucleic acid and nucleic acid-nucleic acid). This module is called interaction.py. We considered that two protein chains interact if the distance between alpha carbons (CA) is less than 8 angstroms, at least once. Between protein-nucleic acid we considered interaction if at least one CA of the protein chain is below 8Å of any atom of the nucleic acid chain. Finally, nucleic acid-nucleic acid interactions have been considered if at least one distance is below 8Å between any of the atoms of both chains.
+Find the chains interactions from PDB files it is not part of our program but we have developed a module to split macro-complexes in pdb files of pairs of all type of chains interacting (protein-protein, protein-nucleic acid and nucleic acid-nucleic acid). This module is called interaction.py. We considered that two protein chains interact if the distance between alpha carbons (CA) is less than 8 Å, at least once. Between protein-nucleic acid we considered interaction if at least one CA of the protein chain is below 8 Å of any atom of the nucleic acid chain. Finally, nucleic acid-nucleic acid interactions have been considered if at least one distance is below 8 Å between any of the atoms of both chains.
 ## Modeling the macro-complex
 ### Read input files and store interactions
 The program is able to extract information of interactions between pairs of chains that are stored in individual pdb files. The input should be the path to the directory where these pdb files are stored. Only pdb files with the following format are accepted:
@@ -59,24 +58,24 @@ Then, it checks if the sequence corresponds to nucleic acids or proteins and it 
 The user is free to select the stoichiometry of each chain from the command-line, which means defining the number of subunits of each chain type included in the macro-complex.
 If the stoichiometry of the complex is not defined, by default the stoichiometry is established as follows: each type of chain will have as many subunits as different identifiers for that chain have been given by the user.
 ### Macro-complex building
-The macro-complex will be obtained using a recursive function based on superimposition, joining pairs of interacting molecules in a single PDB file. The program will run for complexes of only proteins, and complexes of proteins and nucleic acids. To obtain the macro-complex, we designed a module called complexbuilder.py to superimpose chains according to their interactions.
-This module starts by taking a first interaction and establishing it as the initial complex. Then it iterates for the rest of the dictionary, trying to add new chains to this initial complex. To do this, it takes another pair of interacting chains and checks if there is at least one identical chain in the macro-complex in order to do the superimposition. If not, it stores this interaction for the next iteration of the function.
-It also uses the information of which chains have been already included in the macro-complex and how many chains of each type can still include (stoichiometry). In case it cannot add any chain of a given interaction, it discards the whole interaction. If only one of the chains can be included, it selects that one, from now on referred as “new chain”, as the one to be added to the complex. The other chain, the one that is already in the complex, will be called “common chain”. In case that both chains can be included, it select the first one as the “common chain” and the second one as the “new chain”.
+The macro-complex will be obtained using a recursive function based on superimposition, joining pairs of interacting molecules in a single PDB file. The program will run for complexes of only proteins, and complexes of proteins and nucleic acids. To obtain the macro-complex, we designed a module called complexbuilder.py to superimpose chains according to their interactions.  
+This module starts by taking a first interaction and establishing it as the initial complex. Then it iterates for the rest of the dictionary, trying to add new chains to this initial complex. To do this, it takes another pair of interacting chains and checks if there is at least one identical chain in the macro-complex in order to do the superimposition. If not, it stores this interaction for the next iteration of the function.  
+It also uses the information of which chains have been already included in the macro-complex and how many chains of each type can still include (stoichiometry). In case it cannot add any chain of a given interaction, it discards the whole interaction. If only one of the chains can be included, it selects that one, from now on referred as “new chain”, as the one to be added to the complex. The other chain, the one that is already in the complex, will be called “common chain”. In case that both chains can be included, it select the first one as the “common chain” and the second one as the “new chain”.  
 Then, it tries to add the movil chain to the complex. This is done by fixing the common chain and superimposing it one by one to all identical chains that are already in the complex, recursively. Then, it uses the rotation and translation matrices to transform the atomic coordinates of the new chain. At this point, the program is able to detect clashes between the chains of the complex and the new chain. We identified as clashes:
 * **Protein - protein** interactions with at least one distance between CA atoms less than 2 Å.
 * **Protein - nucleic acid** interactions with at least one distance between any atom of the protein chain and any atom of the nucleic acid chain less than 1 Å.
 * **Nucleic acid - nucleic acid** interactions with at least one distance is below 1 Å between any of the atoms of both chains.
-We have decided these distances because we have found that CA steric clashes (Alpha-carbon atom pairs) have higher cut-off distances, and steric clashes (any atom pair) nearly 1Å.
-If a clash is detected, the program will automatically stop to try to add the new chain in that position and will continue iterating by all the possible positions. If finally this chain cannot be included, the whole interaction will be stored for the next iteration of the function.
-This function will iterate a maximum of 10 times in order to try to add all the possible chains in the complex, according to the given stoichiometry. When finished, it stores the complex model in a pdb file. If some interactions have not been added to the complex, it prints a message in the standard error, specifying the identifiers of the interaction.
+We have decided these distances because we have found that CA steric clashes (Alpha-carbon atom pairs) have higher cut-off distances, and steric clashes (any atom pair) nearly 1 Å.  
+If a clash is detected, the program will automatically stop to try to add the new chain in that position and will continue iterating by all the possible positions. If finally this chain cannot be included, the whole interaction will be stored for the next iteration of the function.  
+This function will iterate a maximum of 10 times in order to try to add all the possible chains in the complex, according to the given stoichiometry. When finished, it stores the complex model in a pdb file. If some interactions have not been added to the complex, it prints a message in the standard error, specifying the identifiers of the interaction.  
 Moreover, if the option verbose had been previously selected, the program gives the final stoichiometry of the model, considering protein chains and nucleic acids separately.
 
 ## Organization of the package
-This package is composed by the following modules:
+This package is composed by the following modules:  
 buildcomplex_clear.py: is the main module that contains the workflow of the program.  
-sequencesalignment.py: it performs pairwise sequence alignment to detect those chains that we will consider equals.  
-read_stechiometry.py: it reads the stoichiometry given by the user if the option stoichiometry is selected.  
-complexbuilder.py: it contains several functions that allow the formation of the complex.  
+* sequencesalignment.py: it performs pairwise sequence alignment to detect those chains that we will consider equals.  
+* read_stechiometry.py: it reads the stoichiometry given by the user if the option stoichiometry is selected.  
+* complexbuilder.py: it contains several functions that allow the formation of the complex.  
 # Tutorial
 ## Installation
 ### Via pip
@@ -97,8 +96,8 @@ git clone https://github.com/gsergom/YouSet.git
 ### From source code
 Download the source code of the current release and untar the files:
 ```sh
-wget https://github.com/gsergom/YouSet/archive/1.5.tar.gz
-tar -zxvf 1.5.tar.gz
+wget https://github.com/gsergom/YouSet/archive/1.6.tar.gz
+tar -zxvf 1.6.tar.gz
 ```
 >Note: Please replace the "1.5" for the desired version of the program on the command line!
 
@@ -119,7 +118,7 @@ Options:
 * Mandatory arguments:  
 -d INDIR, --pdbdir INDIR: path to directory with all the base pdb files to use.  
 -f INFASTA, --fasta INFASTA: path to fasta file with the sequences of the complex.  
--o OUTFILE, --output OUTFILE: path to output directory where to store the results.  
+-o OUTDIR, --output OUTDIR: path to output directory where to store the results.  
 
 To run the program with the defaults settings, the following command must be used:
 ```sh
@@ -143,7 +142,7 @@ Chain F (these chains are considered the same: F, G, J, K, L, N): 4
 
 # Theoretical background
 
-The interactions in a macro-complex define how chains are displayed in space, which chains surround other chains, and how they interact with each other through forces and contacts. We considered that two chains interact with distances between atoms less than 8Å. For protein-protein interactions at least one distance between CA atoms, for protein - nucleic acid at least one distance between CA atoms of the protein chain and all atoms of the nucleic acid, and between nucleic acid chains at least one distance between all atoms was considered.  
+The interactions in a macro-complex define how chains are displayed in space, which chains surround other chains, and how they interact with each other through forces and contacts. We considered that two chains interact with distances between atoms less than 8 Å. For protein-protein interactions at least one distance between CA atoms, for protein - nucleic acid at least one distance between CA atoms of the protein chain and all atoms of the nucleic acid, and between nucleic acid chains at least one distance between all atoms was considered.  
 Clashes are unfavorable interactions where atoms are too close in space and can have a problem of energetic repulsion. Protein-protein clashes have been considered as interactions with at least one distance between CA atoms less than 2 Å. We have found that CA steric clashes (Alpha-carbon atom pairs) have higher cut-off distances than steric clashes (any atom pair). Protein-nucleic acid and nucleic acid-nucleic acid interactions, have been considered steric clashes if at least one distance is less than 1 Å between any atom. This program have been designed to avoid clashes in the final model, if one clash is detected, it stops to try to add the new chain in that position and continues iterating by all the possible positions.  
 The program will iterate a maximum number of times in order to try to add all the possible chains in the complex, according to the given stoichiometry. This stoichiometry may be given by the user with an optional argument, but if it’s not selected, the program holds by default the real stoichiometry of the complex.  
 
@@ -197,7 +196,7 @@ The obtained complex was an heterodimer + 24 nucleic acids (final stoichiometry:
 ### Human Progesterone Receptor:
 
 ### **2C7A**. Structure of the progesterone receptor-DNA complex
-Progesterone receptor is a DNA and Zinc Ion binding transcription factor, that regulates the transcription of DNA templated in the cell nucleus. Chains A and B correspond to progesterone receptor; and chains C and D to DNA. The real stoichiometry is Homo 2-mer - A2 + 2 nucleic acids.
+Progesterone receptor is a DNA and Zinc Ion binding transcription factor, that regulates the transcription of DNA templated in the cell nucleus. Chains A and B correspond to progesterone receptor; and chains C and D to DNA.
 
 ![Interface](MarkdownImages/2C7A.png)
 > Observations:
@@ -205,7 +204,7 @@ The obtained complex was an homodimer + 2 nucleic acids (final stoichiometry: A2
 
 ### Human Thyroid Receptor:
 ### **2NLL**. Retinoid X receptor-thyroid hormone receptor DNA-binding domain heterodimer bound to thyroid response element DNA
-Retinoic acid receptor and thyroid hormone receptor are DNA and Zinc Ion binding transcription factors, that regulate the transcription of DNA templated, and their function takes place in the cell nucleus. Chain A corresponds to retinoic acid receptor; chain B to thyroid hormone receptor; and chains C and D to DNA. The real stoichiometry is Hetero 2-mer - AB + 2 nucleic acids.
+Retinoic acid receptor and thyroid hormone receptor are DNA and Zinc Ion binding transcription factors, that regulate the transcription of DNA templated, and their function takes place in the cell nucleus. Chain A corresponds to retinoic acid receptor; chain B to thyroid hormone receptor; and chains C and D to DNA.
 
 ![Interface](MarkdownImages/2NLL.png)
 > Observations:
@@ -217,7 +216,7 @@ The limitations of the program are the following:
 * When the optional stoichiometry argument is passed to the script, the user is given a message and is asked to input information via terminal. This might cause issues if the user decides to redirect the standard output channel to a file as the message won’t appear in the terminal and it would appear that the script is running, even though it is waiting for the user to enter chain information.
 * No optimization of the model is performed via MODELLER
 * Small compounds, such as ligands, hormones or metabolites, are not handled.
-* The structure of 37t2 is not well build. This could be explained by the fact that some parts of this macrocomplex are separated by a distance bigger than 8 A, which is the maximum distance allowed by our module interaction in order to consider that two chains are interacting. Therefore, in this case, the program does not properly work due to the lack of information of the interactions.
+* The structure of 37t2 is not well build. This could be explained by the fact that some parts of this macrocomplex are separated by a distance bigger than 8 Å, which is the maximum distance allowed by our module interaction in order to consider that two chains are interacting. Therefore, in this case, the program does not properly work due to the lack of information of the interactions.
 * Regarding the real incomplete examples, the program is able to rebuild properly the structure from the already elucidated part of the complex. However, the program is not able to use the information of different domains that are part of a single chain in order to join them and build a new complex.
 
 # Requirements
