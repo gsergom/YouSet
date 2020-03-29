@@ -94,7 +94,7 @@ Clone the GitHub repository containing the source code by using the following co
 ```sh
 git clone https://github.com/gsergom/YouSet.git
 ```
-##From source code
+### From source code
 Download the source code of the current release and untar the files:
 ```sh
 wget https://github.com/gsergom/YouSet/archive/1.5.tar.gz
