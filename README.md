@@ -164,7 +164,7 @@ p73, P53-Like Transcription Factor or P53-Related Protein, has been considered a
 The obtained complex was an homodimer + 2 nucleic acids (final stoichiometry: A2 + 2 nucleic acids), which is in accordance with the real stoichiometry. RMSD between 198 pruned atom pairs is 0.000 angstroms; (across all 198 pairs: 0.000).
 
 ### **5FJ8**. Cryo-EM structure of yeast RNA polymerase III elongation complex at 3. 9 A
-RNA polymerase III  transcribes DNA to synthesize small RNAs as ribosomal RNA and transfer RNA. This macro-complex presents the cryo-electron microscopy structures of the Saccharomyces cerevisiae Pol III. Chain R corresponds to RNA; chains S and T to DNA (template and non-template); and chains A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P and Q to RNA polymerase III subunits.
+RNA polymerase III  transcribes DNA to synthesize small RNAs as ribosomal RNA and transfer RNA. This macro-complex presents the cryo-electron microscopy structures of the *Saccharomyces cerevisiae* Pol III. Chain R corresponds to RNA; chains S and T to DNA (template and non-template); and chains A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P and Q to RNA polymerase III subunits.
 
 ![Interface](MarkdownImages/5FJ8.png)
 > Observations:
