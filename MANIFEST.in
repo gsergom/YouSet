@@ -1,2 +1,2 @@
-include * + '.md'
+include 'README' + *
 recursive-include * + 'Markdown' + *
