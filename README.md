@@ -109,7 +109,7 @@ To obtain the input files corresponding to pdb files of each pair of chains inte
 ```sh
 python3 interaction.py 6gmh
 ```
->Interaction files used for the examples are available [here](https://github.com/laurvv/complexes-interactions)
+>Interaction files used for the examples are available [here](https://github.com/laurvv/complexes-interactions).
 ## Building the macro-complex               
 To obtain the macro-complex in a single pdb file, the user has to execute the script buildcomplex_clear.py from the command line. The user can specify several arguments, that can be optional or mandatory, as the directory with all of the interacting pairs of chains, the name of the output directory, etc. These different options are accessible with the following commands:
 ```sh
