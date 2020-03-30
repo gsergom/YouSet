@@ -99,14 +99,17 @@ git clone https://github.com/gsergom/YouSet.git
 ### From source code
 Download the source code of the current release and untar the files:
 ```sh
-wget https://github.com/gsergom/YouSet/archive/1.6.tar.gz
-tar -zxvf 1.6.tar.gz
+wget https://github.com/gsergom/YouSet/archive/2.0.tar.gz
+tar -zxvf 2.0.tar.gz
 ```
->Note: Please replace the "1.5" for the desired version of the program on the command line!
+>Note: Please replace the "2.0" for the desired version of the program on the command line!
 
 ## Obtaining input files
 To obtain the input files corresponding to pdb files of each pair of chains interacting, you can include the module interaction.py inside the same directory where you have included the macro-complex pdb file. Once you have these two files in the same directory, execute the following command, where the last argument is the name of the complex without the .pdb extension:
+```sh
 python3 interaction.py 6gmh
+```
+>Interaction files used for the examples are available [here](https://github.com/laurvv/complexes-interactions)
 ## Building the macro-complex               
 To obtain the macro-complex in a single pdb file, the user has to execute the script buildcomplex_clear.py from the command line. The user can specify several arguments, that can be optional or mandatory, as the directory with all of the interacting pairs of chains, the name of the output directory, etc. These different options are accessible with the following commands:
 ```sh
